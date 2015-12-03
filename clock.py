@@ -4,7 +4,6 @@ import logging
 import requests
 
 from apscheduler.schedulers.blocking import BlockingScheduler
-from functools import partial
 
 
 LOG = logging.getLogger(__name__)
