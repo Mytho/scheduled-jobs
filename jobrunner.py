@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import requests
+
 from apscheduler.schedulers.blocking import BlockingScheduler
 
 
@@ -20,7 +22,7 @@ class JobRunner(object):
 
     def _ping(self, url):
         def handler():
-            print('Pinging {}'.format(url))
+            requests.get(url)
         return handler
 
 
