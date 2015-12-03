@@ -1,1 +1,1 @@
-clock: python jobrunner.py
+clock: python clock.py
