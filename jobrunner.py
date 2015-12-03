@@ -14,16 +14,10 @@ class JobRunner(object):
         self.scheduler.start()
 
     def add_ping(self, url):
-        self.scheduler.add_job(
-            self._ping(url),
-            trigger='cron',
-            minute='*/5',
-            hour='7-22')
-
-    def _ping(self, url):
-        def handler():
+        def fn():
             requests.get(url)
-        return handler
+        self.scheduler.add_job(fn, trigger='cron', minute='*/20', hour='7-22')
+
 
 
 if __name__ == '__main__':
