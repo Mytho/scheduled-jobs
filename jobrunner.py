@@ -25,4 +25,4 @@ class JobRunner(object):
 
 
 if __name__ == '__main__':
-    JobRunner()
+    JobRunner(BlockingScheduler())
