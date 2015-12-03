@@ -1,22 +1,30 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import logging
 import requests
 
 from apscheduler.schedulers.blocking import BlockingScheduler
+from functools import partial
+
+
+logging.basicConfig(level=logging.INFO)
+log = logging.getLogger(__name__)
+
+
+def ping(url):
+    log.info('Pinging {}'.format(url))
+    return partial(requests.get, url)
 
 
 scheduler = BlockingScheduler()
-
 scheduler.add_job(
-    lambda: requests.get('https://challenge-backend.herokuapp.com/ping'),
+    ping('https://challenge-backend.herokuapp.com/ping'),
     trigger='cron',
     minute='*/20',
     hour='8-21')
-
 scheduler.add_job(
-    lambda: requests.get('https://groceries-api.herokuapp.com/status'),
+    ping('https://groceries-api.herokuapp.com/status'),
     trigger='cron',
     minute='*/20',
     hour='7-22')
-
 scheduler.start()
