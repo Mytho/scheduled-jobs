@@ -8,5 +8,6 @@ setup(
     include_package_data=True,
     install_requires=[
         'APScheduler==3.0.4',
+        'requests==2.8.1',
     ],
 )
