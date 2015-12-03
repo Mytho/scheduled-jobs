@@ -12,8 +12,10 @@ log = logging.getLogger(__name__)
 
 
 def ping(url):
-    log.info('Pinging {}'.format(url))
-    return partial(requests.get, url)
+    def fn():
+        log.info('Pinging {}'.format(url))
+        return requests.get(url)
+    return fn
 
 
 scheduler = BlockingScheduler()
