@@ -15,7 +15,7 @@ class JobRunner(object):
         self.scheduler.add_job(
             self._ping(url),
             trigger='cron',
-            minute='*/20',
+            minute='*/5',
             hour='7-22')
 
     def _ping(self, url):
