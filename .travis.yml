@@ -1,6 +1,10 @@
 language: python
 python:
 - 2.7
+install:
+  - pip install -e .
+script:
+  - echo "Skipping..."
 deploy:
   provider: heroku
   api_key:
