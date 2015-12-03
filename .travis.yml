@@ -1,10 +1,7 @@
 language: python
-python:
-- 2.7
-install:
-  - pip install -e .
-script:
-  - echo "Skipping..."
+python: 2.7
+install: "pip install -e ."
+script: ":" # noop
 deploy:
   provider: heroku
   api_key:
