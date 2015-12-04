@@ -1,7 +1,7 @@
 language: python
 python: 2.7
-install: "pip install -e ."
-script: ":" # noop
+install: "pip install -e .[dev]"
+script: "make test"
 deploy:
   provider: heroku
   api_key:
