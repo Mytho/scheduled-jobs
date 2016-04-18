@@ -36,6 +36,5 @@ class Runner(object):
 
 if __name__ == '__main__':
     Runner([
-        'https://challenge-backend.herokuapp.com/ping',
         'https://groceries-api.herokuapp.com/status',
     ])
