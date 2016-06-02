@@ -24,7 +24,7 @@ class Runner(object):
                 self.ping(url),
                 trigger='cron',
                 minute='*/20',
-                hour='6-21')
+                hour='6-23')
         scheduler.start()
 
     def ping(self, url):
