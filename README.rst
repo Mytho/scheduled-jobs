@@ -1,6 +1,3 @@
-.. image:: https://api.travis-ci.org/Mytho/scheduled-jobs.svg
-  :target: https://travis-ci.org/Mytho/scheduled-jobs
-
 ==============
 SCHEDULED JOBS
 ==============
